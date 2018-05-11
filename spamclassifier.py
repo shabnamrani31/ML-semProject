@@ -5,15 +5,14 @@ Created on Mon May  7 14:04:36 2018
 @author: Shabnam Rani
 """
 
-rom TrainingSetsUtil import *
 
-# c is an experimentally obtained value
+
+from training import *
+
+
 def classify(message, training_set, prior = 0.5, c = 3.7e-4):
     
-    """
-    Returns the probability that the given message is of the given type of
-    the training set.
-    """
+   
     
     msg_terms = get_words(message)
     
@@ -27,16 +26,13 @@ def classify(message, training_set, prior = 0.5, c = 3.7e-4):
             
     return msg_probability * prior
 
-# uncomment this to provide input to the program
-  
-#mail_msg = raw_input('Enter the message to be classified:')
-#print ''
-#
-## 0.2 and 0.8 because the ratio of samples for spam and ham were the 0.2-0.8
-#spam_probability = classify(mail_msg, spam_training_set, 0.2)
-#ham_probability = classify(mail_msg, ham_training_set, 0.8)
-#if spam_probability > ham_probability:
-#    print 'Your mail has been classified as SPAM.'
-#else:
-#    print 'Your mail has been classified as HAM.'
-#print ''
+
+mail_msg=("shabnam")
+
+spam_probability = classify(mail_msg, spam_training_set, 0.2)
+ham_probability = classify(mail_msg, ham_training_set, 0.8)
+if spam_probability > ham_probability:
+    print ("Your mail has been classified as SPAM.")
+else:
+    print ("Your mail has been classified as HAM.")
+print ("")

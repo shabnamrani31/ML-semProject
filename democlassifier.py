@@ -11,8 +11,7 @@ from SpamClassifier import *
 SPAM = 'spam'
 HAM = 'ham'
 
-# change it to the type of mails you want to classify
-# path to the hard ham mails
+
 spam2_path = 'data/spam_2/'
 easy_ham2_path = 'data/easy_ham_2/'
 hard_ham2_path = 'data/hard_ham_2/'
@@ -37,7 +36,7 @@ for mail_path in test_paths:
         
         mail_msg = get_mail_from_file(mail_path + mail_name)
         
-        # 0.2 and 0.8 because the ratio of samples for spam and ham were the same
+      
         spam_probability = classify(mail_msg, spam_training_set, 0.2)
         ham_probability = classify(mail_msg, ham_training_set, 0.8)
         
